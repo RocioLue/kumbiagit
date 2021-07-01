@@ -1,0 +1,23 @@
+<?php echo View::content()?>
+<h3>Listado de Alumnos</h3>
+<table>
+<thead>
+<th>Id</th>
+<th>Municipio</th>
+<th>Departamento Id</th>
+<th>Habilitado</th>
+<th>Acciones</th>
+<?php foreach($ListaMunicipio->items as $item): ?>
+<tr>
+ 
+  <td><?php echo $item->id_municipio ?></td>
+  <td><?php echo $item->nombre_municipio?></td>
+  <td><?php echo $item->Habilitado?></td>
+<td>
+<?php echo Html::linkAction("edit/$item->id/",'Editar', 'class="btn"')?>
+
+<?php echo Html::linkAction("del/$item->id/", 'Borrar', 'class="btn red"')?>
+</td>
+</tr>
+<?php endforeach; ?>
+</table>
